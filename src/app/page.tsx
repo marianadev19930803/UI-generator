@@ -12,6 +12,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
+import { SolanaConnect } from '@/service/connectButton';
 
 const App = () => {
   const [code, setCode] = useState<string | undefined>('');
@@ -41,7 +42,8 @@ const App = () => {
 
   return (
     <div className="flex h-screen max-w-full bg-black overflow-y-scroll ">
-      {project && (
+      <SolanaConnect />
+      {/* {project && ( */}
           <>
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel defaultSize={40}><EditorChat code={code ?? ''} setCode={runCode}/></ResizablePanel>
@@ -49,7 +51,7 @@ const App = () => {
           <ResizablePanel defaultSize={60}><Preview code={preview} /></ResizablePanel>
         </ResizablePanelGroup>
          </>
-        )}
+        {/* )} */}
     </div>
   );
 };

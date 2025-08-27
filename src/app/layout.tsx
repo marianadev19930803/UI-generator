@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/sonner"
 import GoogleTagManager from '@magicul/next-google-tag-manager';
 import { Suspense } from "react";
 import NavbarComponent from '@/components/Navbar';
+import { SolanaProvider } from '@/service/solanaProvider';
+import "@solana/wallet-adapter-react-ui/styles.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,14 +25,16 @@ export default function RootLayout({
         <GoogleTagManager />
       </head>
       <body className={inter.className}>
-        <main className='flex flex-col min-h-screen'>
-          <Suspense>
-            <div>
-              {children}
-            </div>
-            <Toaster />
-          </Suspense>
-        </main>
+        <SolanaProvider>
+          <main className='flex flex-col min-h-screen'>
+            <Suspense>
+              <div>
+                  {children}
+              </div>
+              <Toaster />
+            </Suspense>
+          </main>  
+        </SolanaProvider>
       </body>
     </html>
   )
