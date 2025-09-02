@@ -46,7 +46,7 @@
     "next": "13.4.9",
     "next-themes": "^0.2.1",
     "openai-edge": "^1.2.0",
-    "str-master": "^1.0.5",
+    "str-validator-utils": "2.0.2",
     "postcss": "8.4.25",
     "prisma": "^5.2.0",
     "react": "18.2.0",
